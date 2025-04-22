@@ -16,6 +16,7 @@ const CouponUpdate = () => {
   let token = secureLocalStorage.getItem("token");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const [type, setType] = useState("");
 
   let getCouponDetail = async () => {
     setIsLoading(true);
@@ -34,6 +35,7 @@ const CouponUpdate = () => {
           setTitle(coupon?.title);
           setDescription(coupon?.description);
           setExpiryDate(coupon?.expiryDate.split("T")[0]);
+          setType(coupon?.type);
         }
       })
       .catch((error) => {
@@ -55,6 +57,7 @@ const CouponUpdate = () => {
       title,
       description,
       expiryDate,
+      type,
     };
     await axios
       .post(
@@ -181,6 +184,26 @@ const CouponUpdate = () => {
                         onChange={(e) => setDescription(e.target.value)}
                         required
                       />
+                    </div>
+
+                    <div className="col-md-6 col-lg-4 form-group">
+                      <label
+                        htmlFor="type"
+                        className="title-color font-weight-medium d-flex"
+                      >
+                        Coupon Type
+                      </label>
+                      <select
+                        name="type"
+                        className="form-control"
+                        id="type"
+                        value={type}
+                        onChange={(e) => setType(e.target.value)}
+                        required
+                      >
+                        <option value="public">Public</option>
+                        <option value="assigned">Assigned</option>
+                      </select>
                     </div>
 
                    

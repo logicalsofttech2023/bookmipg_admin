@@ -27,6 +27,7 @@ const Coupon = () => {
   const [description, setDescription] = useState("");
   const [customerId, setCustomerId] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
+  const [type, setType] = useState("public");
 
   useEffect(() => {
     getCouponList();
@@ -97,6 +98,9 @@ const Coupon = () => {
               })
             : "N/A"}
         </td>
+        <td className="fw-semibold text-secondary">
+          {coupon?.type === "public" ? "Public" : "Assigned"}
+        </td>
 
         <td>
           <span
@@ -133,18 +137,24 @@ const Coupon = () => {
         </td>
         <td>
           <div className="d-flex justify-content-center gap-2">
-            <Link
-              to={`/assignCoupon/${coupon?._id}`}
-              title="View"
-              className="btn btn-outline-info btn-sm"
-            >
-              Assign
-            </Link>
+            {coupon?.type === "assigned" ? (
+              <Link
+                className="btn btn-outline-primary btn-sm"
+                title="Assign Coupon"
+                to={`/assignCoupon/${coupon._id}`}
+              >
+                Assign Coupon
+              </Link>
+            ) : (
+              <button className="btn btn-outline-info btn-sm" disabled>
+                Public Coupon
+              </button>
+            )}
           </div>
         </td>
+
         <td>
           <div className="d-flex justify-content-center gap-2">
-            
             <Link
               to={`/couponUpdate/${coupon._id}`}
               className="btn btn-outline--primary btn-sm edit"
@@ -179,10 +189,8 @@ const Coupon = () => {
       title,
       description,
       expiryDate,
+      type,
     };
-
-    console.log(couponData);
-
     await axios
       .post(
         `${process.env.REACT_APP_BASE_URL}api/admin/createCoupon`,
@@ -204,6 +212,7 @@ const Coupon = () => {
           setDescription("");
           setCustomerId("");
           setExpiryDate("");
+          setType("public");
         }
       })
       .catch((error) => {
@@ -247,7 +256,6 @@ const Coupon = () => {
       }
     });
   };
-
 
   return (
     <div>
@@ -351,6 +359,26 @@ const Coupon = () => {
 
                     <div className="col-md-6 col-lg-4 form-group">
                       <label
+                        htmlFor="type"
+                        className="title-color font-weight-medium d-flex"
+                      >
+                        Coupon Type
+                      </label>
+                      <select
+                        name="type"
+                        className="form-control"
+                        id="type"
+                        value={type}
+                        onChange={(e) => setType(e.target.value)}
+                        required
+                      >
+                        <option value="public">Public</option>
+                        <option value="assigned">Assigned</option>
+                      </select>
+                    </div>
+
+                    <div className="col-md-6 col-lg-4 form-group">
+                      <label
                         htmlFor="name"
                         className="title-color font-weight-medium d-flex"
                       >
@@ -442,6 +470,7 @@ const Coupon = () => {
                           <th>Discount(%)</th>
                           <th>Coupon Title</th>
                           <th>Expiry Date</th>
+                          <th>Coupon Type</th>
                           <th>Status</th>
                           <th>CreatedAt</th>
                           <th>UpdatedAt</th>

@@ -30,9 +30,10 @@ const HotelOwnerDetail = () => {
   }, [activePage, searchValue, activeTab]);
 
   let fetchOwnerData = () => {
+    
     axios
       .get(
-        `${process.env.REACT_APP_BASE_URL}api/admin/getHotelsByOwnerId?page=${activePage}&limit=${itemsPerPage}&search=${searchValue}&ownerId=${id}`,
+        `${process.env.REACT_APP_BASE_URL}api/admin/getHotelsByOwnerIdInAdmin?page=${activePage}&limit=${itemsPerPage}&search=${searchValue}&ownerId=${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
