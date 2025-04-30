@@ -35,6 +35,8 @@ import UpcomingBooking from "./Components/Pages/UpcomingBooking";
 import CouponUpdate from "./Components/Pages/CouponUpdate";
 import AssignCoupon from "./Components/Pages/AssignCoupon";
 import HotelDetail from "./Components/Pages/HotelDetail";
+import BestCity from "./Components/Pages/BestCity";
+import UpdateBestCity from "./Components/Pages/UpdateBestCity";
 
 function App() {
   const location = useLocation();
@@ -151,6 +153,15 @@ function App() {
           element={<Protect ComponentName={HotelDetail} />}
         ></Route>
 
+        <Route
+          path="/bestCity"
+          element={<Protect ComponentName={BestCity} />}
+        ></Route>
+
+        <Route
+          path="/updateBestCity/:id"
+          element={<Protect ComponentName={UpdateBestCity} />}
+        ></Route>
 
         <Route path="*" element={<Error />}></Route>
       </Routes>

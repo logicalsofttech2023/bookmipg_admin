@@ -11,6 +11,9 @@ import { PiFlagBannerFill } from "react-icons/pi";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
+import { AiOutlineTag } from "react-icons/ai";
+import { AiOutlineEnvironment } from "react-icons/ai";
+
 const Sidebarr = (props) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -55,7 +58,6 @@ const Sidebarr = (props) => {
           className="sidenav"
           style={{ textAlign: "left", paddingLeft: "0px", marginTop: "60px" }}
         >
-
           <div className="navbar-vertical-container ">
             <div className="navbar-vertical-footer-offset pb-0">
               <div className="">
@@ -63,7 +65,6 @@ const Sidebarr = (props) => {
                   <li className="navbar-vertical-aside-has-menu ">
                     <Sidebar className="bg-info example">
                       <Menu style={{ width: "100%" }}>
-
                         <MenuItem
                           component={<Link to="/home" />}
                           icon={
@@ -150,9 +151,7 @@ const Sidebarr = (props) => {
                             color: "white",
                             height: "39px",
                           }}
-                          icon={
-                            <FaUserTie style={{ fontSize: "20px" }} />
-                          }
+                          icon={<FaUserTie style={{ fontSize: "20px" }} />}
                           label="Vendor"
                         >
                           <MenuItem
@@ -195,9 +194,7 @@ const Sidebarr = (props) => {
                             color: "white",
                             height: "39px",
                           }}
-                          icon={
-                            <FaHotel style={{ fontSize: "20px" }} />
-                          }
+                          icon={<FaHotel style={{ fontSize: "20px" }} />}
                           label="Vendor Hotel"
                         >
                           <MenuItem
@@ -361,100 +358,6 @@ const Sidebarr = (props) => {
                           </MenuItem>
                         </SubMenu>
 
-                        <SubMenu
-                          label="Refund Request List"
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={
-                            <i
-                              class="fa fa-credit-card"
-                              style={{ fontSize: "15px" }}
-                              aria-hidden="true"
-                            ></i>
-                          }
-                        >
-                          <MenuItem
-                            component={<Link to="/refundpanding" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Pending{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundapproved" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Approved{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundrefunded" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Refunded{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundreject" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Rejected{" "}
-                          </MenuItem>
-                        </SubMenu>
-
                         <MenuItem
                           style={{
                             paddingLeft: "13px",
@@ -498,10 +401,54 @@ const Sidebarr = (props) => {
                             {" "}
                             Coupon List{" "}
                           </MenuItem>
-                          
                         </SubMenu>
 
-                       
+                        <MenuItem
+                          style={{
+                            paddingLeft: "13px",
+                            backgroundColor: "#073b74",
+                            color: "#a3b9d2",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {" "}
+                          BEST CITY{" "}
+                        </MenuItem>
+
+                        <SubMenu
+                          style={{
+                            paddingLeft: "5px",
+                            backgroundColor: "#073b74",
+                            color: "white",
+                            height: "39px",
+                          }}
+                          icon={
+                            <AiOutlineEnvironment
+                              style={{ fontSize: "20px" }}
+                            />
+                          }
+                          label="Best City"
+                        >
+                          <MenuItem
+                            component={<Link to="/bestCity" />}
+                            icon={
+                              <i
+                                class="fa fa-circle"
+                                style={{ color: "white", fontSize: "5px" }}
+                                aria-hidden="true"
+                              ></i>
+                            }
+                            style={{
+                              paddingLeft: "20px",
+                              backgroundColor: "#073b74",
+                              color: "white",
+                              height: "33px",
+                            }}
+                          >
+                            {" "}
+                            Best City List{" "}
+                          </MenuItem>
+                        </SubMenu>
 
                         <MenuItem
                           style={{
@@ -514,8 +461,6 @@ const Sidebarr = (props) => {
                           {" "}
                           SETTINGS{" "}
                         </MenuItem>
-
-                        
 
                         <SubMenu
                           style={{
@@ -567,7 +512,6 @@ const Sidebarr = (props) => {
                             Term & Conditions{" "}
                           </MenuItem>
 
-                          
                           <MenuItem
                             component={<Link to="/privacypolicy" />}
                             icon={
@@ -588,7 +532,6 @@ const Sidebarr = (props) => {
                             Privacy & Policy{" "}
                           </MenuItem>
 
-                         
                           <MenuItem
                             component={<Link to="/contactus" />}
                             icon={
@@ -724,9 +667,7 @@ const Sidebarr = (props) => {
                             color: "white",
                             height: "39px",
                           }}
-                          icon={
-                            <FaUserTie style={{ fontSize: "20px" }} />
-                          }
+                          icon={<FaUserTie style={{ fontSize: "20px" }} />}
                           label="Vendor"
                         >
                           <MenuItem
@@ -750,6 +691,18 @@ const Sidebarr = (props) => {
                           </MenuItem>
                         </SubMenu>
 
+                        <MenuItem
+                          style={{
+                            paddingLeft: "13px",
+                            backgroundColor: "#073b74",
+                            color: "#a3b9d2",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {" "}
+                          HOTEL MANAGEMENT{" "}
+                        </MenuItem>
+
                         <SubMenu
                           style={{
                             paddingLeft: "5px",
@@ -757,11 +710,11 @@ const Sidebarr = (props) => {
                             color: "white",
                             height: "39px",
                           }}
-                          icon={<FaUser style={{ fontSize: "20px" }} />}
-                          label="Delivery Men"
+                          icon={<FaHotel style={{ fontSize: "20px" }} />}
+                          label="Vendor Hotel"
                         >
                           <MenuItem
-                            component={<Link to="/addnewdeliveryman" />}
+                            component={<Link to="/hotelList" />}
                             icon={
                               <i
                                 class="fa fa-circle"
@@ -777,10 +730,30 @@ const Sidebarr = (props) => {
                             }}
                           >
                             {" "}
-                            Add New{" "}
+                            Hotel List{" "}
+                          </MenuItem>
+
+                          <MenuItem
+                            component={<Link to="/approvedHotels" />}
+                            icon={
+                              <i
+                                class="fa fa-circle"
+                                style={{ color: "white", fontSize: "5px" }}
+                                aria-hidden="true"
+                              ></i>
+                            }
+                            style={{
+                              paddingLeft: "20px",
+                              backgroundColor: "#073b74",
+                              color: "white",
+                              height: "32px",
+                            }}
+                          >
+                            {" "}
+                            Approved Hotels{" "}
                           </MenuItem>
                           <MenuItem
-                            component={<Link to="/deliverymanlist" />}
+                            component={<Link to="/deniedHotels" />}
                             icon={
                               <i
                                 class="fa fa-circle"
@@ -796,45 +769,7 @@ const Sidebarr = (props) => {
                             }}
                           >
                             {" "}
-                            List{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/deliverywithdraw" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Withdraws{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/emergencycontact" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Emergency Contact{" "}
+                            Denied Hotels{" "}
                           </MenuItem>
                         </SubMenu>
 
@@ -847,181 +782,8 @@ const Sidebarr = (props) => {
                           }}
                         >
                           {" "}
-                          PRODUCT MANAGEMENT{" "}
+                          BOOKING MANAGEMENT{" "}
                         </MenuItem>
-
-                        <SubMenu
-                          label="Category"
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={<BiCategory style={{ fontSize: "20px" }} />}
-                        >
-                          <MenuItem
-                            component={<Link to="/maincetagory" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Main category{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/cetagory" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Category{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/subcetagory" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Sub Category
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/subsubcetagory" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Sub subcategory
-                          </MenuItem>
-                        </SubMenu>
-
-                        <SubMenu
-                          label="Product Attribute"
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={
-                            <PiFlagBannerFill style={{ fontSize: "20px" }} />
-                          }
-                        >
-                          <MenuItem
-                            component={<Link to="/addnewcolor" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Color{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/addnewbrands" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Brands{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/addnewsize" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Size{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/addnewproducttype" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            Product Type{" "}
-                          </MenuItem>
-                        </SubMenu>
-
                         <SubMenu
                           style={{
                             paddingLeft: "5px",
@@ -1030,12 +792,12 @@ const Sidebarr = (props) => {
                             height: "39px",
                           }}
                           icon={
-                            <FaUserTie style={{ fontSize: "20px" }} />
+                            <FaClipboardList style={{ fontSize: "20px" }} />
                           }
-                          label="Vendor Products"
+                          label="Bookings"
                         >
                           <MenuItem
-                            component={<Link to="/newproductsrequest" />}
+                            component={<Link to="/pendingBooking" />}
                             icon={
                               <i
                                 class="fa fa-circle"
@@ -1047,35 +809,14 @@ const Sidebarr = (props) => {
                               paddingLeft: "20px",
                               backgroundColor: "#073b74",
                               color: "white",
-                              height: "32px",
+                              height: "33px",
                             }}
                           >
                             {" "}
-                            New Products Requests{" "}
-                          </MenuItem>
-                         
-
-                          <MenuItem
-                            component={<Link to="/vendorapprovedproductlist" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Approved Products{" "}
+                            Pending{" "}
                           </MenuItem>
                           <MenuItem
-                            component={<Link to="/vendordeniedproductlist" />}
+                            component={<Link to="/completedBooking" />}
                             icon={
                               <i
                                 class="fa fa-circle"
@@ -1087,11 +828,49 @@ const Sidebarr = (props) => {
                               paddingLeft: "20px",
                               backgroundColor: "#073b74",
                               color: "white",
-                              height: "32px",
+                              height: "33px",
                             }}
                           >
                             {" "}
-                            Denied Products{" "}
+                            Completed{" "}
+                          </MenuItem>
+                          <MenuItem
+                            component={<Link to="/cancelledBooking" />}
+                            icon={
+                              <i
+                                class="fa fa-circle"
+                                style={{ color: "white", fontSize: "5px" }}
+                                aria-hidden="true"
+                              ></i>
+                            }
+                            style={{
+                              paddingLeft: "20px",
+                              backgroundColor: "#073b74",
+                              color: "white",
+                              height: "33px",
+                            }}
+                          >
+                            {" "}
+                            Cancelled{" "}
+                          </MenuItem>
+                          <MenuItem
+                            component={<Link to="/upcomingBooking" />}
+                            icon={
+                              <i
+                                class="fa fa-circle"
+                                style={{ color: "white", fontSize: "5px" }}
+                                aria-hidden="true"
+                              ></i>
+                            }
+                            style={{
+                              paddingLeft: "20px",
+                              backgroundColor: "#073b74",
+                              color: "white",
+                              height: "33px",
+                            }}
+                          >
+                            {" "}
+                            Upcoming{" "}
                           </MenuItem>
                         </SubMenu>
 
@@ -1104,8 +883,9 @@ const Sidebarr = (props) => {
                           }}
                         >
                           {" "}
-                          ORDER MANAGEMENT{" "}
+                          COUPON MANAGEMENT{" "}
                         </MenuItem>
+
                         <SubMenu
                           style={{
                             paddingLeft: "5px",
@@ -1114,16 +894,59 @@ const Sidebarr = (props) => {
                             height: "39px",
                           }}
                           icon={
-                            <i
-                              class="fa fa-shopping-cart"
+                            <FaClipboardList style={{ fontSize: "20px" }} />
+                          }
+                          label="Coupon"
+                        >
+                          <MenuItem
+                            component={<Link to="/coupon" />}
+                            icon={
+                              <i
+                                class="fa fa-circle"
+                                style={{ color: "white", fontSize: "5px" }}
+                                aria-hidden="true"
+                              ></i>
+                            }
+                            style={{
+                              paddingLeft: "20px",
+                              backgroundColor: "#073b74",
+                              color: "white",
+                              height: "33px",
+                            }}
+                          >
+                            {" "}
+                            Coupon List{" "}
+                          </MenuItem>
+                        </SubMenu>
+
+                        <MenuItem
+                          style={{
+                            paddingLeft: "13px",
+                            backgroundColor: "#073b74",
+                            color: "#a3b9d2",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {" "}
+                          BEST CITY{" "}
+                        </MenuItem>
+
+                        <SubMenu
+                          style={{
+                            paddingLeft: "5px",
+                            backgroundColor: "#073b74",
+                            color: "white",
+                            height: "39px",
+                          }}
+                          icon={
+                            <AiOutlineEnvironment
                               style={{ fontSize: "20px" }}
-                              aria-hidden="true"
-                            ></i>
+                            />
                           }
-                          label="Order"
+                          label="Best City"
                         >
                           <MenuItem
-                            component={<Link to="/panding" />}
+                            component={<Link to="/bestCity" />}
                             icon={
                               <i
                                 class="fa fa-circle"
@@ -1139,500 +962,9 @@ const Sidebarr = (props) => {
                             }}
                           >
                             {" "}
-                            Pending{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/confrimproducts" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Confirmed{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/packaging" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Packing{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/outForDelivery" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Shipped{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/delivered" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Delivered{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/returned" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Returned
-                          </MenuItem>
-
-                          <MenuItem
-                            component={<Link to="/failedToDelivery" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Not delivered
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/canceled" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "33px",
-                            }}
-                          >
-                            {" "}
-                            Cancelled
+                            Best City List{" "}
                           </MenuItem>
                         </SubMenu>
-
-                        <SubMenu
-                          label="Refund Request List"
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={
-                            <i
-                              class="fa fa-credit-card"
-                              style={{ fontSize: "15px" }}
-                              aria-hidden="true"
-                            ></i>
-                          }
-                        >
-                          <MenuItem
-                            component={<Link to="/refundpanding" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Pending{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundapproved" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Approved{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundrefunded" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Refunded{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundreject" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Rejected{" "}
-                          </MenuItem>
-                        </SubMenu>
-
-                        <MenuItem
-                          style={{
-                            paddingLeft: "13px",
-                            backgroundColor: "#073b74",
-                            color: "#a3b9d2",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {" "}
-                          PROMOTION MANAGEMENT{" "}
-                        </MenuItem>
-                        <MenuItem
-                          component={<Link to="/bannerlist" />}
-                          icon={
-                            <PiFlagBannerFill style={{ fontSize: "20px" }} />
-                          }
-                          style={{
-                            paddingLeft: "7px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                        >
-                          {" "}
-                          Banners{" "}
-                        </MenuItem>
-
-                        <SubMenu
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={<MdLocalOffer style={{ fontSize: "20px" }} />}
-                          label="Advertisement & Deals"
-                        >
-                        
-                          <MenuItem
-                            component={<Link to="/addadvertisment" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Add Advertisement{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/dealsoftheday" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Deal of the day{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/dealsoftoday" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Today Offer{" "}
-                          </MenuItem>
-                         
-                        </SubMenu>
-
-                        <SubMenu
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={
-                            <IoMdNotifications style={{ fontSize: "20px" }} />
-                          }
-                          label="Notification"
-                        >
-                          <MenuItem
-                            component={<Link to="/sendnotification" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Send Notification{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/sendnotification" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Push Notification{" "}
-                          </MenuItem>
-                        </SubMenu>
-
-                       
-
-                        <MenuItem
-                          style={{
-                            paddingLeft: "13px",
-                            backgroundColor: "#073b74",
-                            color: "#a3b9d2",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {" "}
-                          TRANSACTION MANAGEMENT{" "}
-                        </MenuItem>
-
-                        <SubMenu
-                          label="Chat"
-                          style={{
-                            paddingLeft: "5px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                          icon={
-                            <IoChatboxEllipses style={{ fontSize: "20px" }} />
-                          }
-                        >
-                          <MenuItem
-                            component={<Link to="/vendorchat" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Customer Chat{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/message" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Delivery-Man Chat{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/chatwithadmin" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Vendor Chat{" "}
-                          </MenuItem>
-                        </SubMenu>
-                        <MenuItem
-                          component={<Link to="/suggestion" />}
-                          icon={<MdFeedback style={{ fontSize: "20px" }} />}
-                          style={{
-                            paddingLeft: "7px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                        >
-                          {" "}
-                          Suggestion{" "}
-                        </MenuItem>
-                        <MenuItem
-                          component={<Link to="/alltransication" />}
-                          icon={
-                            <BiMoneyWithdraw style={{ fontSize: "20px" }} />
-                          }
-                          style={{
-                            paddingLeft: "7px",
-                            backgroundColor: "#073b74",
-                            color: "white",
-                            height: "39px",
-                          }}
-                        >
-                          {" "}
-                          All Transaction{" "}
-                        </MenuItem>
 
                         <SubMenu
                           style={{
@@ -1703,64 +1035,7 @@ const Sidebarr = (props) => {
                             {" "}
                             Term & Conditions{" "}
                           </MenuItem>
-                          <MenuItem
-                            component={<Link to="/returnpolicy" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Return Policy{" "}
-                          </MenuItem>
 
-                          <MenuItem
-                            component={<Link to="/cancellaionpolicy" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Cancellation Policy{" "}
-                          </MenuItem>
-                          <MenuItem
-                            component={<Link to="/refundpolicy" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Refund Policy{" "}
-                          </MenuItem>
                           <MenuItem
                             component={<Link to="/privacypolicy" />}
                             icon={
@@ -1781,25 +1056,6 @@ const Sidebarr = (props) => {
                             Privacy & Policy{" "}
                           </MenuItem>
 
-                          <MenuItem
-                            component={<Link to="/faq" />}
-                            icon={
-                              <i
-                                class="fa fa-circle"
-                                style={{ color: "white", fontSize: "5px" }}
-                                aria-hidden="true"
-                              ></i>
-                            }
-                            style={{
-                              paddingLeft: "20px",
-                              backgroundColor: "#073b74",
-                              color: "white",
-                              height: "32px",
-                            }}
-                          >
-                            {" "}
-                            Faq{" "}
-                          </MenuItem>
                           <MenuItem
                             component={<Link to="/contactus" />}
                             icon={
